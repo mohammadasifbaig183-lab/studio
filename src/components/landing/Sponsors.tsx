@@ -3,12 +3,14 @@ import type { Sponsor } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const MOCK_SPONSORS: Sponsor[] = [
-  { id: '1', name: 'Sponsor 1', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageHint || '' },
-  { id: '2', name: 'Sponsor 2', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageHint || '' },
-  { id: '3', name: 'Sponsor 3', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageHint || '' },
-  { id: '4', name: 'Sponsor 4', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageHint || '' },
-  { id: '5', name: 'Sponsor 5', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageHint || '' },
-  { id: '6', name: 'Sponsor 6', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageHint || '' },
+  { id: '1', name: 'InnovateCorp', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageHint || '' },
+  { id: '2', name: 'FutureTech', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageHint || '' },
+  { id: '3', name: 'QuantumLeap', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageHint || '' },
+  { id: '4', name: 'CodeGenius', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageHint || '' },
+  { id: '5', name: 'DataWeavers', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageHint || '' },
+  { id: '6', name: 'Nexus Solutions', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageHint || '' },
+  { id: '7', name: 'Apex Innovations', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-7')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-7')?.imageHint || '' },
+  { id: '8', name: 'StellarWorks', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-8')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-8')?.imageHint || '' },
 ];
 
 
