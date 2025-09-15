@@ -54,10 +54,10 @@ export default function AdminEventsPage() {
     setEvents(events.filter((event) => event.id !== id));
   };
 
-  const handleSave = (eventData: Omit<Event, 'id' | 'imageUrl' | 'imageHint'>) => {
+  const handleSave = (eventData: Omit<Event, 'id' | 'imageHint'>) => {
     if (selectedEvent) {
       // Update existing event
-      const updatedEvent: Event = { ...selectedEvent, ...eventData };
+      const updatedEvent: Event = { ...selectedEvent, ...eventData, imageHint: eventData.tags[0] || 'event' };
       setEvents(
         events.map((event) =>
           event.id === selectedEvent.id ? updatedEvent : event
@@ -68,7 +68,6 @@ export default function AdminEventsPage() {
       const newEvent: Event = {
         ...eventData,
         id: (events.length + 1).toString(),
-        imageUrl: `https://picsum.photos/seed/e${events.length + 1}/600/400`,
         imageHint: eventData.tags[0] || 'event',
       };
       setEvents([...events, newEvent]);

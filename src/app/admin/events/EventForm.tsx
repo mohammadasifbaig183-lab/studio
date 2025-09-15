@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Dialog,
   DialogContent,
@@ -18,7 +19,7 @@ import type { Event } from '@/lib/types';
 interface EventFormProps {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
-  onSave: (event: Omit<Event, 'id' | 'imageUrl' | 'imageHint'>) => void;
+  onSave: (event: Omit<Event, 'id' | 'imageHint'>) => void;
   event: Event | null;
 }
 
@@ -29,6 +30,8 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState('');
   const [price, setPrice] = useState(0);
+  const [imageUrl, setImageUrl] = useState('');
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   useEffect(() => {
     if (event) {
@@ -38,6 +41,8 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       setDescription(event.description);
       setTags(event.tags.join(', '));
       setPrice(event.price);
+      setImageUrl(event.imageUrl);
+      setImagePreview(event.imageUrl);
     } else {
       // Reset form when adding a new event
       setTitle('');
@@ -46,8 +51,23 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       setDescription('');
       setTags('');
       setPrice(0);
+      setImageUrl('');
+      setImagePreview(null);
     }
   }, [event, isOpen]);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const result = reader.result as string;
+        setImagePreview(result);
+        setImageUrl(result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = () => {
     const eventData = {
@@ -57,6 +77,7 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       description,
       tags: tags.split(',').map(tag => tag.trim()),
       price: Number(price),
+      imageUrl: imageUrl || `https://picsum.photos/seed/e${Math.random()}/600/400`,
     };
     onSave(eventData);
   };
@@ -107,6 +128,17 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
             </Label>
             <Input id="tags" value={tags} onChange={(e) => setTags(e.target.value)} className="col-span-3" placeholder="AI, Tech,..." />
           </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+             <Label htmlFor="image" className="text-right">
+              Image
+            </Label>
+            <Input id="image" type="file" accept="image/*" onChange={handleImageChange} className="col-span-3" />
+          </div>
+          {imagePreview && (
+            <div className="col-span-4 flex justify-center">
+                <Image src={imagePreview} alt="Event image preview" width={200} height={150} className="rounded-md object-cover" />
+            </div>
+          )}
         </div>
         <DialogFooter>
           <Button type="button" onClick={handleSubmit}>Save changes</Button>
