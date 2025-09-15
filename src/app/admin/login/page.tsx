@@ -18,7 +18,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 
 // This is a simplified admin auth. In a real app, you'd use custom claims.
-const ADMIN_EMAIL = "admin@synergysphere.com";
+const ADMIN_EMAIL = "admin@gmail.com";
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
@@ -36,6 +36,17 @@ export default function AdminLoginPage() {
       return;
     }
     try {
+      // For this prototype, we'll use a hardcoded password check.
+      // In a real app, you should rely solely on Firebase Authentication for security.
+      if (password !== 'admin@123') {
+        toast({
+          title: 'Invalid Credentials',
+          description: 'The password you entered is incorrect.',
+          variant: 'destructive',
+        });
+        return;
+      }
+      
       await signInWithEmailAndPassword(auth, email, password);
       toast({
         title: 'Admin Login Successful',
@@ -43,16 +54,25 @@ export default function AdminLoginPage() {
       });
       router.push('/admin');
     } catch (error: any) {
-      toast({
-        title: 'Error signing in',
-        description: error.message,
-        variant: 'destructive',
-      });
+       // Gracefully handle if the admin account doesn't exist in Firebase Auth
+       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+         toast({
+            title: 'Authentication Failed',
+            description: 'Please create an account for the admin email in your Firebase project.',
+            variant: 'destructive',
+         });
+       } else {
+        toast({
+            title: 'Error signing in',
+            description: error.message,
+            variant: 'destructive',
+        });
+       }
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full">
+    <div className="flex items-center justify-center min-h-screen w-full bg-muted/40">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-2">
@@ -67,11 +87,11 @@ export default function AdminLoginPage() {
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="admin@synergysphere.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Input id="email" type="email" placeholder="admin@gmail.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="admin@123" />
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-4">

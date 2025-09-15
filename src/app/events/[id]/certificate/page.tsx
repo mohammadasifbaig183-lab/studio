@@ -21,6 +21,7 @@ export default function CertificatePage() {
 
   useEffect(() => {
     const isEventCompleted = (eventDate: string) => {
+      // Using a simple date comparison
       return new Date(eventDate) < new Date();
     };
 
@@ -34,7 +35,8 @@ export default function CertificatePage() {
           if (userRegistrations.includes(eventId) && isEventCompleted(currentEvent.date)) {
             setEvent(currentEvent);
           } else {
-            router.push(`/my-events`); // Not registered or event not completed
+            // Redirect if not registered or event is not yet completed
+            router.push(`/my-events`);
           }
         } else {
           router.push('/my-events'); // Event not found
@@ -60,13 +62,14 @@ export default function CertificatePage() {
     );
   }
   
-  const issueDate = new Date(event.date);
-  issueDate.setDate(issueDate.getDate() + 1); // Day after event
+  // Issue the certificate the day after the event ends
+  const eventDate = new Date(event.date);
+  const issueDate = new Date(eventDate.setDate(eventDate.getDate() + 1));
 
   return (
-    <div className="bg-muted/40 py-12 px-4">
+    <div className="bg-muted/40 py-12 px-4 print:bg-white">
       <div className="container mx-auto max-w-4xl">
-         <Card className="p-8 md:p-12 border-2 border-primary shadow-2xl relative">
+         <Card className="p-8 md:p-12 border-2 border-primary shadow-2xl relative print:shadow-none print:border-2">
             {/* Decorative elements */}
             <div className="absolute top-4 right-4 h-16 w-16 text-primary/10">
                 <Award className="h-full w-full"/>
@@ -91,7 +94,7 @@ export default function CertificatePage() {
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 text-muted-foreground mt-10">
                 <div className="text-center">
                     <p className="font-semibold border-b pb-1">Event Date</p>
-                    <p className="pt-1">{event.date}</p>
+                    <p className="pt-1">{new Date(event.date).toLocaleDateString()}</p>
                 </div>
                  <div className="text-center">
                     <p className="font-semibold border-b pb-1">Date Issued</p>
@@ -100,7 +103,7 @@ export default function CertificatePage() {
             </div>
            </CardContent>
         </Card>
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 print:hidden">
             <Button onClick={handlePrint}>Print or Save Certificate</Button>
         </div>
       </div>

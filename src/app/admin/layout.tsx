@@ -13,7 +13,7 @@ import {
   SidebarFooter,
   SidebarInset,
 } from '@/components/ui/sidebar';
-import { Sparkles, Shield, Calendar, Users, BarChart, LogOut, Home } from 'lucide-react';
+import { Shield, Calendar, Users, BarChart, LogOut, Home } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { auth } from '@/lib/firebase';
@@ -39,7 +39,7 @@ export default function AdminLayout({
       title: 'Signed Out',
       description: 'You have been successfully signed out.',
     });
-    router.push('/admin/login');
+    router.push('/');
   };
 
   return (
@@ -70,7 +70,7 @@ export default function AdminLayout({
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
-                  isActive={pathname === '/admin/events'}
+                  isActive={pathname.startsWith('/admin/events')}
                 >
                   <Link href="/admin/events">
                     <Calendar />
@@ -81,8 +81,7 @@ export default function AdminLayout({
               <SidebarMenuItem>
                  <SidebarMenuButton
                   asChild
-                  isActive={pathname === '/admin/users'}
-                  disabled
+                  isActive={pathname.startsWith('/admin/users')}
                 >
                   <Link href="/admin/users">
                     <Users />
@@ -93,7 +92,6 @@ export default function AdminLayout({
                <SidebarMenuItem>
                  <SidebarMenuButton
                   asChild
-                  href="/"
                   target="_blank"
                 >
                   <Link href="/">
