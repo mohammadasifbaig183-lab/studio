@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Sparkles, User, LogOut, CalendarCheck, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { auth } from '@/lib/firebase';
@@ -21,6 +21,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default function Header() {
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -41,6 +42,12 @@ export default function Header() {
       return `${names[0][0]}${names[names.length - 1][0]}`;
     }
     return name[0];
+  }
+
+  const isAdminRoute = pathname.startsWith('/admin');
+
+  if (isAdminRoute) {
+    return null; // Don't render the main header on admin routes
   }
 
   return (
@@ -76,10 +83,12 @@ export default function Header() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => router.push('/admin')}>
-                  <Shield className="mr-2 h-4 w-4" />
-                  <span>Admin</span>
-                </DropdownMenuItem>
+                {user.email === 'admin@synergysphere.com' && (
+                  <DropdownMenuItem onClick={() => router.push('/admin')}>
+                    <Shield className="mr-2 h-4 w-4" />
+                    <span>Admin</span>
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuItem onClick={() => router.push('/profile')}>
                   <User className="mr-2 h-4 w-4" />
                   <span>Profile</span>

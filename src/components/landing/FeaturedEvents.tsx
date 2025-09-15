@@ -12,6 +12,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['AI', 'Technology', 'Future'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-1')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-1')?.imageHint || '',
+    price: 1,
   },
   {
     id: '2',
@@ -22,6 +23,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Hackathon', 'Coding', 'Innovation'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-2')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-2')?.imageHint || '',
+    price: 0,
   },
   {
     id: '3',
@@ -32,6 +34,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Design', 'UX/UI', 'Creative'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-3')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-3')?.imageHint || '',
+    price: 1,
   },
     {
     id: '4',
@@ -42,6 +45,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Web3', 'Blockchain', 'Crypto'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-4')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-4')?.imageHint || '',
+    price: 1,
   },
   {
     id: '5',
@@ -52,6 +56,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Data Science', 'ML', 'Analytics'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-5')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-5')?.imageHint || '',
+    price: 1,
   },
   {
     id: '6',
@@ -62,6 +67,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Startups', 'Venture Capital', 'Pitch'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-6')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-6')?.imageHint || '',
+    price: 0,
   },
   {
     id: '7',
@@ -72,6 +78,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['GreenTech', 'Sustainability', 'Climate'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-7')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-7')?.imageHint || '',
+    price: 0,
   },
   {
     id: '8',
@@ -82,6 +89,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Mobile', 'iOS', 'Android'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-8')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-8')?.imageHint || '',
+    price: 1,
   },
   {
     id: '9',
@@ -92,6 +100,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Cloud', 'DevOps', 'Kubernetes'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-9')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-9')?.imageHint || '',
+    price: 1,
   },
   {
     id: '10',
@@ -102,6 +111,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['FinTech', 'Finance', 'Blockchain'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-10')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-10')?.imageHint || '',
+    price: 1,
   },
   {
     id: '11',
@@ -112,6 +122,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['HealthTech', 'Healthcare', 'AI'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-11')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-11')?.imageHint || '',
+    price: 0,
   },
   {
     id: '12',
@@ -122,6 +133,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['E-commerce', 'Marketing', 'Retail'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-12')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-12')?.imageHint || '',
+    price: 1,
   },
   {
     id: '13',
@@ -132,6 +144,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Gaming', 'Esports', 'Entertainment'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-13')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-13')?.imageHint || '',
+    price: 1,
   },
   {
     id: '14',
@@ -142,6 +155,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Cybersecurity', 'Security', 'Privacy'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-14')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-14')?.imageHint || '',
+    price: 0,
   },
   {
     id: '15',
@@ -152,6 +166,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Mobility', 'Automotive', 'Technology'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-15')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-15')?.imageHint || '',
+    price: 1,
   },
   {
     id: '16',
@@ -162,6 +177,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['EdTech', 'Education', 'AI'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-16')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-16')?.imageHint || '',
+    price: 0,
   },
   {
     id: '17',
@@ -172,6 +188,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Space', 'Science', 'Exploration'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-17')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-17')?.imageHint || '',
+    price: 1,
   },
   {
     id: '18',
@@ -182,6 +199,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Robotics', 'Automation', 'AI'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-18')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-18')?.imageHint || '',
+    price: 1,
   },
   {
     id: '19',
@@ -192,6 +210,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['VR', 'AR', 'Metaverse'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-19')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-19')?.imageHint || '',
+    price: 0,
   },
   {
     id: '20',
@@ -202,6 +221,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['AgriTech', 'Farming', 'Sustainability'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-20')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-20')?.imageHint || '',
+    price: 1,
   },
   {
     id: '21',
@@ -212,6 +232,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Quantum', 'Computing', 'Science'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-21')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-21')?.imageHint || '',
+    price: 1,
   },
   {
     id: '22',
@@ -222,6 +243,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Creators', 'Social Media', 'Marketing'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-22')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-22')?.imageHint || '',
+    price: 0,
   },
   {
     id: '23',
@@ -232,6 +254,7 @@ export const MOCK_EVENTS: Event[] = [
     tags: ['Smart City', 'IoT', 'Urban'],
     imageUrl: PlaceHolderImages.find(p => p.id === 'event-23')?.imageUrl || '',
     imageHint: PlaceHolderImages.find(p => p.id === 'event-23')?.imageHint || '',
+    price: 1,
   },
 ];
 

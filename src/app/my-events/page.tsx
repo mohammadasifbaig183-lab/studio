@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Calendar, MapPin, Ticket, Award, CheckCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function MyEventsPage() {
   const [user, setUser] = useState<FirebaseUser | null>(null);
@@ -38,6 +39,11 @@ export default function MyEventsPage() {
   const isEventCompleted = (eventDate: string) => {
     return new Date(eventDate) < new Date();
   };
+  
+  const getEventImage = (eventId: string) => {
+      const eventImage = PlaceHolderImages.find(p => p.id === `event-${eventId}`);
+      return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+  }
 
   if (loading) {
     return (
@@ -68,7 +74,7 @@ export default function MyEventsPage() {
             <Card key={event.id} className="overflow-hidden h-full flex flex-col">
               <CardHeader className="p-0 relative">
                 <Image
-                  src={event.imageUrl}
+                  src={getEventImage(event.id)}
                   alt={event.title}
                   width={600}
                   height={400}
@@ -95,14 +101,18 @@ export default function MyEventsPage() {
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0 flex-col sm:flex-row gap-2">
-                 <Button variant="outline" className="w-full sm:w-auto">
-                    <Ticket className="mr-2 h-4 w-4" />
-                    View Ticket
+                 <Button asChild variant="outline" className="w-full sm:w-auto">
+                    <Link href={`/events/${event.id}/ticket`}>
+                        <Ticket className="mr-2 h-4 w-4" />
+                        View Ticket
+                    </Link>
                 </Button>
                 {isEventCompleted(event.date) ? (
-                  <Button className="w-full sm:w-auto">
-                    <Award className="mr-2 h-4 w-4" />
-                    Get Certificate
+                  <Button asChild className="w-full sm:w-auto">
+                    <Link href={`/events/${event.id}/certificate`}>
+                        <Award className="mr-2 h-4 w-4" />
+                        Get Certificate
+                    </Link>
                   </Button>
                 ) : (
                    <Button variant="ghost" disabled className="w-full sm:w-auto">

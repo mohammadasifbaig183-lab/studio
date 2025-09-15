@@ -22,6 +22,9 @@ export default function EventCard({ event }: EventCardProps) {
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={event.imageHint}
           />
+           <Badge variant={event.price === 0 ? "secondary" : "default"} className="absolute top-2 right-2">
+            {event.price === 0 ? 'Free' : `$${event.price}`}
+          </Badge>
         </CardHeader>
         <CardContent className="p-4 flex-grow">
           <CardTitle className="text-lg font-headline mb-2 leading-tight">{event.title}</CardTitle>
@@ -35,12 +38,12 @@ export default function EventCard({ event }: EventCardProps) {
               <span>{event.location}</span>
             </div>
           </div>
-          <p className="text-sm mt-3">{event.description}</p>
+          <p className="text-sm mt-3 line-clamp-3">{event.description}</p>
         </CardContent>
         <CardFooter className="p-4 pt-0">
           <div className="flex flex-wrap gap-2">
             {event.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+              <Badge key={tag} variant="outline">
                 {tag}
               </Badge>
             ))}

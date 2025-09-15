@@ -8,11 +8,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Event } from '@/lib/types';
-import { Calendar, MapPin, Users, Ticket, CheckCircle } from 'lucide-react';
+import { Calendar, MapPin, Users, Ticket, CheckCircle, CreditCard } from 'lucide-react';
 import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
 import { useToast } from '@/hooks/use-toast';
 import { auth } from '@/lib/firebase';
 import type { User as FirebaseUser } from 'firebase/auth';
+import { loadStripe } from '@stripe/stripe-js';
+import { createCheckoutSession } from '@/app/actions/stripe';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
 
 export default function EventDetailPage() {
   const params = useParams();
@@ -22,6 +26,7 @@ export default function EventDetailPage() {
 
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const event: Event | undefined = MOCK_EVENTS.find(e => e.id === eventId);
 
@@ -46,7 +51,7 @@ export default function EventDetailPage() {
     );
   }
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (!user) {
       toast({
         title: 'Please sign in',
@@ -57,25 +62,64 @@ export default function EventDetailPage() {
       return;
     }
 
-    const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
-    if (!registrations[user.uid]) {
-      registrations[user.uid] = [];
-    }
-    
-    if (!registrations[user.uid].includes(event.id)) {
-      registrations[user.uid].push(event.id);
-      localStorage.setItem('registrations', JSON.stringify(registrations));
-      setIsRegistered(true);
-      toast({
-        title: 'Registration Successful!',
-        description: `You are now registered for ${event.title}.`,
-      });
-    } else {
-        toast({
-            title: 'Already Registered',
-            description: `You are already registered for ${event.title}.`,
+    setLoading(true);
+
+    if (event.price > 0) {
+      // Paid event
+      try {
+        const session = await createCheckoutSession({
+          priceId: `price_${event.id}`, // This assumes you have a price ID convention
+          eventName: event.title,
+          eventDescription: event.description,
+          eventImageUrl: event.imageUrl,
+          eventId: event.id,
+          userId: user.uid,
         });
+
+        if (session.sessionId) {
+          const stripe = await stripePromise;
+          const { error } = await stripe!.redirectToCheckout({ sessionId: session.sessionId });
+          if (error) {
+            toast({
+              title: 'Error redirecting to checkout',
+              description: error.message,
+              variant: 'destructive',
+            });
+          }
+        } else {
+           throw new Error('Could not create checkout session');
+        }
+      } catch (error: any) {
+        toast({
+          title: 'Payment Error',
+          description: error.message || 'There was an issue with the payment process.',
+          variant: 'destructive',
+        });
+      }
+    } else {
+      // Free event
+      const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
+      if (!registrations[user.uid]) {
+        registrations[user.uid] = [];
+      }
+      
+      if (!registrations[user.uid].includes(event.id)) {
+        registrations[user.uid].push(event.id);
+        localStorage.setItem('registrations', JSON.stringify(registrations));
+        setIsRegistered(true);
+        toast({
+          title: 'Registration Successful!',
+          description: `You are now registered for ${event.title}.`,
+        });
+        router.push(`/events/${event.id}/ticket`);
+      } else {
+          toast({
+              title: 'Already Registered',
+              description: `You are already registered for ${event.title}.`,
+          });
+      }
     }
+     setLoading(false);
   };
 
 
@@ -115,7 +159,9 @@ export default function EventDetailPage() {
         <div className="md:col-span-1">
           <Card className="sticky top-28">
             <CardHeader>
-              <CardTitle>Event Details</CardTitle>
+              <CardTitle>
+                {event.price === 0 ? 'Free Event' : `Price: $${event.price}`}
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
@@ -130,13 +176,19 @@ export default function EventDetailPage() {
                 <Users className="h-5 w-5 text-muted-foreground" />
                 <span className="font-medium">1,234 attendees</span>
               </div>
-              <Button size="lg" className="w-full" onClick={handleRegister} disabled={isRegistered}>
+              <Button size="lg" className="w-full" onClick={handleRegister} disabled={isRegistered || loading}>
                 {isRegistered ? (
                     <>
                         <CheckCircle className="mr-2 h-5 w-5" />
                         Registered
                     </>
                 ) : (
+                  event.price > 0 ?
+                    <>
+                        <CreditCard className="mr-2 h-5 w-5" />
+                        Buy Ticket
+                    </>
+                    :
                     <>
                         <Ticket className="mr-2 h-5 w-5" />
                         Register Now

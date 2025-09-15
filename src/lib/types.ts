@@ -7,6 +7,7 @@ export type Event = {
   tags: string[];
   imageUrl: string;
   imageHint: string;
+  price: number; // 0 for free events
 };
 
 export type Sponsor = {
