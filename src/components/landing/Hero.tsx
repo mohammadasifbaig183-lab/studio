@@ -24,7 +24,7 @@ export default function Hero() {
             <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
               The Future of Events is Here.
             </h1>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-primary-foreground/80 mb-8">
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-white mb-8">
               Discover, connect, and collaborate at the most innovative events powered by AI. Your next big idea starts at SynergySphere.
             </p>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
