@@ -84,58 +84,44 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{event ? 'Edit Event' : 'Add New Event'}</DialogTitle>
           <DialogDescription>
             {event ? 'Update the details for this event.' : 'Enter the details for the new event.'}
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4 max-h-[70vh] overflow-y-auto pr-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="title" className="text-right">
-              Title
-            </Label>
-            <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} className="col-span-3" />
+        <div className="grid gap-6 py-4 max-h-[70vh] overflow-y-auto pr-4">
+          <div className="grid gap-2">
+            <Label htmlFor="title">Title</Label>
+            <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
           </div>
-           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="price" className="text-right">
-              Price
-            </Label>
-            <Input id="price" type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))} className="col-span-3" />
+           <div className="grid gap-2">
+            <Label htmlFor="price">Price ($)</Label>
+            <Input id="price" type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))} />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="date" className="text-right">
-              Date
-            </Label>
-            <Input id="date" value={date} onChange={(e) => setDate(e.target.value)} className="col-span-3" placeholder="Month DD, YYYY" />
+          <div className="grid gap-2">
+            <Label htmlFor="date">Date</Label>
+            <Input id="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Month DD, YYYY" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="location" className="text-right">
-              Location
-            </Label>
-            <Input id="location" value={location} onChange={(e) => setLocation(e.target.value)} className="col-span-3" />
+          <div className="grid gap-2">
+            <Label htmlFor="location">Location</Label>
+            <Input id="location" value={location} onChange={(e) => setLocation(e.target.value)} />
           </div>
-           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="description" className="text-right">
-              Description
-            </Label>
-            <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} className="col-span-3" />
+           <div className="grid gap-2">
+            <Label htmlFor="description">Description</Label>
+            <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="tags" className="text-right">
-              Tags
-            </Label>
-            <Input id="tags" value={tags} onChange={(e) => setTags(e.target.value)} className="col-span-3" placeholder="AI, Tech,..." />
+          <div className="grid gap-2">
+            <Label htmlFor="tags">Tags (comma-separated)</Label>
+            <Input id="tags" value={tags} onChange={(e) => setTags(e.target.value)} placeholder="AI, Tech,..." />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-             <Label htmlFor="image" className="text-right">
-              Image
-            </Label>
-            <Input id="image" type="file" accept="image/*" onChange={handleImageChange} className="col-span-3" />
+          <div className="grid gap-2">
+             <Label htmlFor="image">Event Image</Label>
+            <Input id="image" type="file" accept="image/*" onChange={handleImageChange} />
           </div>
           {imagePreview && (
-            <div className="col-span-4 flex justify-center">
+            <div className="flex justify-center">
                 <Image src={imagePreview} alt="Event image preview" width={200} height={150} className="rounded-md object-cover" />
             </div>
           )}
