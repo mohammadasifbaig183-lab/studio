@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Sparkles, User, LogOut, CalendarCheck } from 'lucide-react';
+import { Sparkles, User, LogOut, CalendarCheck, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { auth } from '@/lib/firebase';
 import type { User as FirebaseUser } from 'firebase/auth';
@@ -76,6 +76,10 @@ export default function Header() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => router.push('/admin')}>
+                  <Shield className="mr-2 h-4 w-4" />
+                  <span>Admin</span>
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => router.push('/profile')}>
                   <User className="mr-2 h-4 w-4" />
                   <span>Profile</span>

@@ -6,7 +6,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '1',
     title: 'AI & The Future of Work',
-    date: 'October 26, 2024',
+    date: 'September 15, 2025',
     location: 'Virtual',
     description: 'Explore how artificial intelligence is reshaping industries and careers in this groundbreaking virtual summit. Join leaders from around the world.',
     tags: ['AI', 'Technology', 'Future'],
@@ -15,8 +15,8 @@ export const MOCK_EVENTS: Event[] = [
   },
   {
     id: '2',
-    title: 'Global Hackathon 2024',
-    date: 'November 1-3, 2024',
+    title: 'Global Hackathon 2025',
+    date: 'September 20-22, 2025',
     location: 'San Francisco, CA',
     description: 'The world\'s largest hackathon returns. Build, learn, and compete with the brightest minds for amazing prizes. Innovation starts here.',
     tags: ['Hackathon', 'Coding', 'Innovation'],
@@ -26,7 +26,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '3',
     title: 'Creative Design Summit',
-    date: 'November 15, 2024',
+    date: 'October 5, 2025',
     location: 'Virtual',
     description: 'A full day of inspiring talks and hands-on workshops from the leading minds in the design industry. Perfect for UX/UI and graphic designers.',
     tags: ['Design', 'UX/UI', 'Creative'],
@@ -36,7 +36,7 @@ export const MOCK_EVENTS: Event[] = [
     {
     id: '4',
     title: 'Web3 Forward Conference',
-    date: 'December 5-6, 2024',
+    date: 'October 18-19, 2025',
     location: 'Miami, FL',
     description: 'A two-day deep dive into the decentralized future. Connect with blockchain experts, developers, and pioneers shaping the next wave of the internet.',
     tags: ['Web3', 'Blockchain', 'Crypto'],
@@ -46,7 +46,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '5',
     title: 'Data Science & Machine Learning Expo',
-    date: 'January 10-12, 2025',
+    date: 'November 1-3, 2025',
     location: 'New York, NY',
     description: 'Discover the latest trends and applications in data science and machine learning. Network with industry professionals and academics.',
     tags: ['Data Science', 'ML', 'Analytics'],
@@ -56,7 +56,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '6',
     title: 'Startup Pitch Night',
-    date: 'January 22, 2025',
+    date: 'November 15, 2025',
     location: 'Austin, TX',
     description: 'Watch the most promising startups pitch their ideas to a panel of venture capitalists. Your chance to see the next big thing.',
     tags: ['Startups', 'Venture Capital', 'Pitch'],
@@ -66,7 +66,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '7',
     title: 'GreenTech Innovation Forum',
-    date: 'February 5, 2025',
+    date: 'December 1, 2025',
     location: 'Virtual',
     description: 'Join sustainability leaders and innovators to discuss how technology can solve the world\'s most pressing environmental challenges.',
     tags: ['GreenTech', 'Sustainability', 'Climate'],
@@ -76,7 +76,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '8',
     title: 'Mobile Developers Conference',
-    date: 'February 18-19, 2025',
+    date: 'December 8-9, 2025',
     location: 'Berlin, Germany',
     description: 'The premier event for mobile developers. Learn about the latest in iOS, Android, and cross-platform development.',
     tags: ['Mobile', 'iOS', 'Android'],
@@ -86,7 +86,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '9',
     title: 'Cloud Native Summit',
-    date: 'July 15, 2024',
+    date: 'December 15, 2025',
     location: 'Seattle, WA',
     description: 'Dive into the world of cloud-native technologies, from Kubernetes to serverless. A must-attend for DevOps and backend engineers.',
     tags: ['Cloud', 'DevOps', 'Kubernetes'],
@@ -96,7 +96,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '10',
     title: 'FinTech Revolution',
-    date: 'July 28-29, 2024',
+    date: 'January 10-11, 2026',
     location: 'London, UK',
     description: 'Explore the intersection of finance and technology. Topics include digital banking, payment gateways, and DeFi.',
     tags: ['FinTech', 'Finance', 'Blockchain'],
@@ -106,7 +106,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '11',
     title: 'HealthTech Forward',
-    date: 'August 12, 2024',
+    date: 'January 20, 2026',
     location: 'Virtual',
     description: 'Discover how technology is transforming healthcare, from telemedicine to AI-powered diagnostics.',
     tags: ['HealthTech', 'Healthcare', 'AI'],
@@ -116,7 +116,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '12',
     title: 'E-commerce Expo',
-    date: 'August 25, 2024',
+    date: 'January 28, 2026',
     location: 'Chicago, IL',
     description: 'The premier event for online retailers. Learn about the latest trends in e-commerce, marketing, and logistics.',
     tags: ['E-commerce', 'Marketing', 'Retail'],
@@ -126,7 +126,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '13',
     title: 'Gaming Universe',
-    date: 'September 8-10, 2024',
+    date: 'February 1-3, 2026',
     location: 'Los Angeles, CA',
     description: 'A three-day celebration of gaming. Get hands-on with upcoming titles and meet your favorite developers.',
     tags: ['Gaming', 'Esports', 'Entertainment'],
@@ -136,7 +136,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '14',
     title: 'Cybersecurity Conclave',
-    date: 'September 20, 2024',
+    date: 'February 15, 2026',
     location: 'Virtual',
     description: 'Join top cybersecurity experts to discuss the latest threats and defense strategies in the digital world.',
     tags: ['Cybersecurity', 'Security', 'Privacy'],
@@ -146,7 +146,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '15',
     title: 'Future of Transportation',
-    date: 'October 5, 2024',
+    date: 'February 25, 2026',
     location: 'Detroit, MI',
     description: 'From autonomous vehicles to electric aviation, explore the future of how we move.',
     tags: ['Mobility', 'Automotive', 'Technology'],
@@ -155,8 +155,8 @@ export const MOCK_EVENTS: Event[] = [
   },
   {
     id: '16',
-    title: 'EdTech Summit 2025',
-    date: 'March 10, 2025',
+    title: 'EdTech Summit 2026',
+    date: 'March 1, 2026',
     location: 'Virtual',
     description: 'Explore how technology is revolutionizing education, from K-12 to lifelong learning.',
     tags: ['EdTech', 'Education', 'AI'],
@@ -166,7 +166,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '17',
     title: 'Space Exploration Symposium',
-    date: 'March 25, 2025',
+    date: 'March 10, 2026',
     location: 'Houston, TX',
     description: 'Join astronauts, engineers, and scientists to discuss the future of space exploration and colonization.',
     tags: ['Space', 'Science', 'Exploration'],
@@ -176,7 +176,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '18',
     title: 'Robotics & Automation Fair',
-    date: 'April 7-8, 2025',
+    date: 'March 15-16, 2026',
     location: 'Tokyo, Japan',
     description: 'See the latest in robotics and automation from leading companies and research institutions.',
     tags: ['Robotics', 'Automation', 'AI'],
@@ -186,7 +186,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '19',
     title: 'Virtual Reality World',
-    date: 'April 22, 2025',
+    date: 'March 22, 2026',
     location: 'Virtual',
     description: 'Immerse yourself in the world of VR and AR. Experience the latest hardware and software innovations.',
     tags: ['VR', 'AR', 'Metaverse'],
@@ -196,7 +196,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '20',
     title: 'AgriTech Conference',
-    date: 'May 5, 2025',
+    date: 'March 28, 2026',
     location: 'Des Moines, IA',
     description: 'Learn how technology is shaping the future of agriculture, from precision farming to sustainable practices.',
     tags: ['AgriTech', 'Farming', 'Sustainability'],
@@ -206,7 +206,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '21',
     title: 'Quantum Computing Summit',
-    date: 'May 19-20, 2025',
+    date: 'September 5-6, 2025',
     location: 'Zurich, Switzerland',
     description: 'A deep dive into the world of quantum computing. Connect with leading researchers and innovators.',
     tags: ['Quantum', 'Computing', 'Science'],
@@ -216,7 +216,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '22',
     title: 'The Creator Economy',
-    date: 'June 2, 2025',
+    date: 'September 12, 2025',
     location: 'Virtual',
     description: 'Learn how to build a career as a content creator. Topics include monetization, audience growth, and branding.',
     tags: ['Creators', 'Social Media', 'Marketing'],
@@ -226,7 +226,7 @@ export const MOCK_EVENTS: Event[] = [
   {
     id: '23',
     title: 'Smart Cities Expo',
-    date: 'June 15, 2025',
+    date: 'September 25, 2025',
     location: 'Singapore',
     description: 'Explore the technologies and strategies that are making our cities smarter, more sustainable, and more livable.',
     tags: ['Smart City', 'IoT', 'Urban'],
