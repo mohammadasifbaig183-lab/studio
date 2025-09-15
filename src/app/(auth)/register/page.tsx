@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -13,6 +15,9 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Sparkles } from 'lucide-react';
+import { auth } from '@/lib/firebase';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, updateProfile } from 'firebase/auth';
+import { useToast } from '@/hooks/use-toast';
 
 const GoogleIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.19,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.19,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.19,22C17.6,22 21.5,18.33 21.5,12.33C21.5,11.76 21.45,11.44 21.35,11.1Z"></path></svg>
@@ -23,6 +28,56 @@ const GitHubIcon = () => (
 )
 
 export default function RegisterPage() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+  const { toast } = useToast();
+
+  const handleSignUp = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: fullName,
+      });
+      router.push('/');
+    } catch (error: any) {
+      toast({
+        title: 'Error signing up',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      router.push('/');
+    } catch (error: any) {
+      toast({
+        title: 'Error signing in with Google',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
+  };
+
+  const handleGitHubSignIn = async () => {
+    const provider = new GithubAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      router.push('/');
+    } catch (error: any) {
+      toast({
+        title: 'Error signing in with GitHub',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-theme(spacing.14)-theme(spacing.28))] py-12 px-4">
       <Card className="w-full max-w-sm">
@@ -38,11 +93,11 @@ export default function RegisterPage() {
         </CardHeader>
         <CardContent className="grid gap-4">
             <div className="grid grid-cols-2 gap-2">
-            <Button variant="outline">
+            <Button variant="outline" onClick={handleGoogleSignIn}>
               <GoogleIcon />
               <span className="ml-2">Google</span>
             </Button>
-            <Button variant="outline">
+            <Button variant="outline" onClick={handleGitHubSignIn}>
                 <GitHubIcon />
               <span className="ml-2">GitHub</span>
             </Button>
@@ -59,19 +114,19 @@ export default function RegisterPage() {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="fullName">Full Name</Label>
-            <Input id="fullName" type="text" placeholder="John Doe" required />
+            <Input id="fullName" type="text" placeholder="John Doe" required value={fullName} onChange={(e) => setFullName(e.target.value)} />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="m@example.com" required />
+            <Input id="email" type="email" placeholder="m@example.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required />
+            <Input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-4">
-          <Button className="w-full">Sign Up</Button>
+          <Button className="w-full" onClick={handleSignUp}>Sign Up</Button>
           <div className="text-center text-sm">
             Already have an account?{' '}
             <Link href="/login" className="underline">
