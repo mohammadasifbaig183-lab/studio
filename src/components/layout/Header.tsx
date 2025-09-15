@@ -61,6 +61,9 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-4">
           <Button asChild variant="ghost">
+            <Link href="/admin/login">Admin</Link>
+          </Button>
+          <Button asChild variant="ghost">
             <Link href="/#events">Events</Link>
           </Button>
           {user ? (
