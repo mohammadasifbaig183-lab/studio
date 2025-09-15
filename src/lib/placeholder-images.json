@@ -9,139 +9,139 @@
     },
     {
       "id": "event-1",
-      "description": "AI conference with robotics",
-      "imageUrl": "https://images.unsplash.com/photo-1527525443983-6e60c7535228?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "AI robotics"
+      "description": "A robot hand and a human hand about to touch, representing the future of work with AI.",
+      "imageUrl": "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "AI future"
     },
     {
       "id": "event-2",
-      "description": "People collaborating at a hackathon",
-      "imageUrl": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "people coding"
+      "description": "Developers collaborating and coding on laptops in a modern office during a hackathon.",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "developers coding"
     },
     {
       "id": "event-3",
-      "description": "Designer sketching on a tablet",
-      "imageUrl": "https://images.unsplash.com/photo-1581090123145-559648b2a19f?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "design sketch"
+      "description": "A designer's desk with a laptop showing UI/UX design work and sketches.",
+      "imageUrl": "https://images.unsplash.com/photo-1516131206008-dd041a97645a?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "design desk"
     },
     {
       "id": "event-4",
-      "description": "Abstract blockchain network visualization",
-      "imageUrl": "https://images.unsplash.com/photo-1621596131468-f1c3d186c319?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "blockchain network"
+      "description": "Abstract digital visualization of a glowing blockchain network.",
+      "imageUrl": "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "blockchain technology"
     },
     {
       "id": "event-5",
-      "description": "Complex data visualization on a screen",
+      "description": "A screen displaying complex data science graphs and machine learning models.",
       "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "data visualization"
+      "imageHint": "data science"
     },
     {
       "id": "event-6",
-      "description": "Person pitching an idea to an audience",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "An entrepreneur presenting a startup pitch to a panel of judges in a competition setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "startup pitch"
     },
     {
       "id": "event-7",
-      "description": "Wind turbines in a field, representing green energy",
-      "imageUrl": "https://images.unsplash.com/photo-1508247926952-78b3c9b8ba02?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "green energy"
+      "description": "A field of solar panels and wind turbines under a clear blue sky, representing green technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "green technology"
     },
     {
       "id": "event-8",
-      "description": "Mobile app development on a laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1555774698-0b77e0ab2169?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "A mobile developer testing an application on multiple smartphones.",
+      "imageUrl": "https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "mobile development"
     },
     {
       "id": "event-9",
-      "description": "Server racks in a data center",
-      "imageUrl": "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "cloud servers"
+      "description": "Server racks in a modern, well-lit data center, representing cloud-native infrastructure.",
+      "imageUrl": "https://images.unsplash.com/photo-1529421379434-47a6124a8734?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "data center"
     },
     {
       "id": "event-10",
-      "description": "Person using a mobile banking app",
-      "imageUrl": "https://images.unsplash.com/photo-1601597111158-2f9541d4bbf4?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "financial technology"
+      "description": "A person making a contactless payment with a smartphone, representing fintech.",
+      "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "fintech payment"
     },
     {
       "id": "event-11",
-      "description": "Doctor using a tablet with medical data",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "medical technology"
+      "description": "A doctor reviewing patient data on a tablet, symbolizing the intersection of healthcare and technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "health tech"
     },
     {
       "id": "event-12",
-      "description": "Online shopping interface on a laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "online shopping"
+      "description": "A warehouse with boxes ready for shipment, representing e-commerce logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-06924151d159?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "ecommerce warehouse"
     },
     {
       "id": "event-13",
-      "description": "Person playing video games with a controller",
-      "imageUrl": "https://images.unsplash.com/photo-1580327372025-3ab193a1523c?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "video games"
+      "description": "A neon-lit gaming setup with a high-end PC and multiple monitors.",
+      "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "gaming setup"
     },
     {
       "id": "event-14",
-      "description": "Abstract representation of cyber security",
+      "description": "A digital padlock on a circuit board, symbolizing cybersecurity.",
       "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "cyber security"
     },
     {
       "id": "event-15",
-      "description": "Futuristic electric car on a city street",
-      "imageUrl": "https://images.unsplash.com/photo-1617802319350-c2fbe04c5208?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "electric car"
+      "description": "An autonomous self-driving car navigating a city at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1533106418989-88406e768237?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "autonomous car"
     },
     {
       "id": "event-16",
-      "description": "Student learning online with a laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "online learning"
+      "description": "A student using a laptop for online learning in a modern library setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c64c1bae548?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "online education"
     },
     {
       "id": "event-17",
-      "description": "Rocket launching into space",
-      "imageUrl": "https://images.unsplash.com/photo-1457364983758-515f4a6f9457?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "rocket launch"
+      "description": "A rocket launching into a starry night sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "space exploration"
     },
     {
       "id": "event-18",
-      "description": "A sophisticated robotic arm in a factory setting",
-      "imageUrl": "https://images.unsplash.com/photo-1567705689825-e215f973f135?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "robotic arm"
+      "description": "A sophisticated robotic arm performing a delicate task in a factory.",
+      "imageUrl": "https://images.unsplash.com/photo-1620712943543-9596128693a0?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "robotics automation"
     },
     {
       "id": "event-19",
-      "description": "Person wearing a VR headset and looking amazed",
-      "imageUrl": "https://images.unsplash.com/photo-1544415239-2a88d7459d8c?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "VR headset"
+      "description": "A person wearing a VR headset, immersed in a digital world.",
+      "imageUrl": "https://images.unsplash.com/photo-1534643955074-a435b5a2ae7d?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "virtual reality"
     },
     {
       "id": "event-20",
-      "description": "Drone flying over a farm field",
-      "imageUrl": "https://images.unsplash.com/photo-1572292728821-4435b23e7647?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "smart farm"
+      "description": "A tractor working in a field, representing modern agriculture technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "agritech farming"
     },
     {
       "id": "event-21",
-      "description": "Abstract visualization of quantum computing",
-      "imageUrl": "https://images.unsplash.com/photo-1617854818583-09e7f077a157?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "quantum computer"
+      "description": "An abstract, glowing visualization representing quantum computing concepts.",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "quantum computing"
     },
     {
       "id": "event-22",
-      "description": "Person recording a video for social media",
-      "imageUrl": "https://images.unsplash.com/photo-1556741533-31f13a0ce853?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "social media"
+      "description": "A content creator filming with a professional camera and lighting setup for social media.",
+      "imageUrl": "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "content creator"
     },
     {
       "id": "event-23",
-      "description": "A modern city skyline with digital overlays",
+      "description": "A modern city skyline at night with light trails, symbolizing a smart city.",
       "imageUrl": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "smart city"
     },
@@ -172,6 +172,7 @@
     {
       "id": "sponsor-5",
       "description": "Sponsor logo 5",
+      "_comment": "This is a placeholder as the previous image was not loading",
       "imageUrl": "https://images.unsplash.com/photo-1611162617213-6d222950b732?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "modern logo"
     },
