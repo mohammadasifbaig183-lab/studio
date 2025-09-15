@@ -91,7 +91,7 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
             {event ? 'Update the details for this event.' : 'Enter the details for the new event.'}
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 py-4 max-h-[70vh] overflow-y-auto pr-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="title" className="text-right">
               Title
