@@ -46,7 +46,7 @@
     {
       "id": "event-7",
       "description": "A field of solar panels and wind turbines under a clear blue sky, representing green technology.",
-      "imageUrl": "https://images.unsplash.com/photo-1617573453999-3665715b9b59?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1558667613-294025443275?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "green technology"
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "event-11",
       "description": "A doctor reviewing patient data on a tablet, symbolizing the intersection of healthcare and technology.",
-      "imageUrl": "https://images.unsplash.com/photo-1532938912279-418a5b9b7880?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1624727828489-a1e03b79bba8?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "health tech"
     },
     {
@@ -146,30 +146,6 @@
       "imageHint": "smart city"
     },
     {
-      "id": "sponsor-1",
-      "description": "InnovateCorp Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "company logo"
-    },
-    {
-      "id": "sponsor-2",
-      "description": "FutureTech Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1600096194534-96da94c23253?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "tech logo"
-    },
-    {
-      "id": "sponsor-3",
-      "description": "QuantumLeap Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1557021913-993b16951b1f?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "abstract logo"
-    },
-    {
-      "id": "sponsor-4",
-      "description": "Twitter logo",
-      "imageUrl": "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "social media"
-    },
-    {
       "id": "sponsor-5",
       "description": "Instagram logo",
       "imageUrl": "https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -182,16 +158,16 @@
       "imageHint": "version control"
     },
     {
-      "id": "sponsor-7",
-      "description": "Apex Innovations Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1549247796-6d8f74230193?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "mountain logo"
+      "id": "sponsor-9",
+      "description": "YouTube logo",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "video platform"
     },
     {
-      "id": "sponsor-8",
-      "description": "StellarWorks Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1608405059604-d8302d952097?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "star logo"
+      "id": "sponsor-10",
+      "description": "Facebook logo",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616805-68825c2834b6?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "social media"
     }
   ]
 }

@@ -4,14 +4,10 @@ import type { Sponsor } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const MOCK_SPONSORS: Sponsor[] = [
-  { id: '1', name: 'InnovateCorp', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-1')?.imageHint || '' },
-  { id: '2', name: 'FutureTech', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-2')?.imageHint || '' },
-  { id: '3', name: 'QuantumLeap', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-3')?.imageHint || '' },
-  { id: '4', name: 'Twitter', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-4')?.imageHint || '' },
-  { id: '5', name: 'Instagram', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageHint || '' },
   { id: '6', name: 'GitHub', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-6')?.imageHint || '' },
-  { id: '7', name: 'Apex Innovations', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-7')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-7')?.imageHint || '' },
-  { id: '8', name: 'StellarWorks', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-8')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-8')?.imageHint || '' },
+  { id: '5', name: 'Instagram', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-5')?.imageHint || '' },
+  { id: '9', name: 'YouTube', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-9')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-9')?.imageHint || '' },
+  { id: '10', name: 'Facebook', logoUrl: PlaceHolderImages.find(p => p.id === 'sponsor-10')?.imageUrl || '', logoHint: PlaceHolderImages.find(p => p.id === 'sponsor-10')?.imageHint || '' },
 ];
 
 
