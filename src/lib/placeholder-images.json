@@ -22,7 +22,7 @@
     {
       "id": "event-3",
       "description": "A designer's desk with wireframes and sketches for a mobile application, representing creative design.",
-      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "creative design"
     },
     {
@@ -46,7 +46,7 @@
     {
       "id": "event-7",
       "description": "A field of solar panels and wind turbines under a clear blue sky, representing green technology.",
-      "imageUrl": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1617573453999-3665715b9b59?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "green technology"
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "event-11",
       "description": "A doctor reviewing patient data on a tablet, symbolizing the intersection of healthcare and technology.",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1532938912279-418a5b9b7880?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "health tech"
     },
     {
@@ -147,20 +147,20 @@
     },
     {
       "id": "sponsor-1",
-      "description": "Sponsor logo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "minimalist logo"
+      "description": "InnovateCorp Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "company logo"
     },
     {
       "id": "sponsor-2",
-      "description": "Sponsor logo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "geometric logo"
+      "description": "FutureTech Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1600096194534-96da94c23253?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tech logo"
     },
     {
       "id": "sponsor-3",
-      "description": "Sponsor logo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "QuantumLeap Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1557021913-993b16951b1f?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "abstract logo"
     },
     {
@@ -183,15 +183,15 @@
     },
     {
       "id": "sponsor-7",
-      "description": "Sponsor logo 7",
-      "imageUrl": "https://images.unsplash.com/photo-1611162618021-99679e88354c?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "triangle logo"
+      "description": "Apex Innovations Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1549247796-6d8f74230193?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "mountain logo"
     },
     {
       "id": "sponsor-8",
-      "description": "Sponsor logo 8",
-      "imageUrl": "https://images.unsplash.com/photo-1611162616834-3b7c8f9c1a1f?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "square logo"
+      "description": "StellarWorks Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1608405059604-d8302d952097?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "star logo"
     }
   ]
 }
