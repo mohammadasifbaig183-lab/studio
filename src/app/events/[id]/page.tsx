@@ -17,6 +17,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { createCheckoutSession } from '@/app/actions/stripe';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
+const EVENTS_STORAGE_KEY = 'admin_events';
 
 export default function EventDetailPage() {
   const params = useParams();
@@ -27,8 +28,14 @@ export default function EventDetailPage() {
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [isRegistered, setIsRegistered] = useState(false);
   const [loading, setLoading] = useState(false);
-  
-  const event: Event | undefined = MOCK_EVENTS.find(e => e.id === eventId);
+  const [event, setEvent] = useState<Event | undefined>(undefined);
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+    const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+    const currentEvent = allEvents.find((e: Event) => e.id === eventId);
+    setEvent(currentEvent);
+  }, [eventId]);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -123,7 +130,7 @@ export default function EventDetailPage() {
   };
 
 
-  const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
+  const eventImage = event.imageUrl.startsWith('data:') ? { imageUrl: event.imageUrl, imageHint: event.imageHint } : PlaceHolderImages.find(p => p.id === `event-${event.id}`);
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Event } from '@/lib/types';
 import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
 import { Button } from '@/components/ui/button';
@@ -35,10 +35,26 @@ import {
 } from '@/components/ui/alert-dialog';
 import EventForm from './EventForm';
 
+const EVENTS_STORAGE_KEY = 'admin_events';
+
 export default function AdminEventsPage() {
-  const [events, setEvents] = useState<Event[]>(MOCK_EVENTS);
+  const [events, setEvents] = useState<Event[]>([]);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+    if (storedEvents) {
+      setEvents(JSON.parse(storedEvents));
+    } else {
+      setEvents(MOCK_EVENTS);
+    }
+  }, []);
+
+  const updateEvents = (newEvents: Event[]) => {
+    setEvents(newEvents);
+    localStorage.setItem(EVENTS_STORAGE_KEY, JSON.stringify(newEvents));
+  };
 
   const handleAdd = () => {
     setSelectedEvent(null);
@@ -51,26 +67,26 @@ export default function AdminEventsPage() {
   };
 
   const handleDelete = (id: string) => {
-    setEvents(events.filter((event) => event.id !== id));
+    const newEvents = events.filter((event) => event.id !== id);
+    updateEvents(newEvents);
   };
 
   const handleSave = (eventData: Omit<Event, 'id' | 'imageHint'>) => {
     if (selectedEvent) {
       // Update existing event
       const updatedEvent: Event = { ...selectedEvent, ...eventData, imageHint: eventData.tags[0] || 'event' };
-      setEvents(
-        events.map((event) =>
-          event.id === selectedEvent.id ? updatedEvent : event
-        )
+      const newEvents = events.map((event) =>
+        event.id === selectedEvent.id ? updatedEvent : event
       );
+      updateEvents(newEvents);
     } else {
       // Add new event
       const newEvent: Event = {
         ...eventData,
-        id: (events.length + 1).toString(),
+        id: (Math.max(...events.map(e => Number(e.id)), 0) + 1).toString(),
         imageHint: eventData.tags[0] || 'event',
       };
-      setEvents([...events, newEvent]);
+      updateEvents([...events, newEvent]);
     }
     setIsFormOpen(false);
     setSelectedEvent(null);

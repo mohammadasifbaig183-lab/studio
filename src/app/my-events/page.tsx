@@ -14,6 +14,8 @@ import { Calendar, MapPin, Ticket, Award, CheckCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
+const EVENTS_STORAGE_KEY = 'admin_events';
+
 export default function MyEventsPage() {
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [registeredEvents, setRegisteredEvents] = useState<Event[]>([]);
@@ -26,7 +28,9 @@ export default function MyEventsPage() {
         setUser(user);
         const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
         const userRegistrations = registrations[user.uid] || [];
-        const userEvents = MOCK_EVENTS.filter(event => userRegistrations.includes(event.id));
+        const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+        const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+        const userEvents = allEvents.filter((event: Event) => userRegistrations.includes(event.id));
         setRegisteredEvents(userEvents);
       } else {
         router.push('/login');
@@ -40,8 +44,11 @@ export default function MyEventsPage() {
     return new Date(eventDate) < new Date();
   };
   
-  const getEventImage = (eventId: string) => {
-      const eventImage = PlaceHolderImages.find(p => p.id === `event-${eventId}`);
+  const getEventImage = (event: Event) => {
+      if (event.imageUrl.startsWith('data:')) {
+        return event.imageUrl;
+      }
+      const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
       return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
   }
 
@@ -74,7 +81,7 @@ export default function MyEventsPage() {
             <Card key={event.id} className="overflow-hidden h-full flex flex-col">
               <CardHeader className="p-0 relative">
                 <Image
-                  src={getEventImage(event.id)}
+                  src={getEventImage(event)}
                   alt={event.title}
                   width={600}
                   height={400}

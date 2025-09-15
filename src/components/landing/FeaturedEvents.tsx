@@ -1,6 +1,9 @@
+'use client';
+
 import type { Event } from '@/lib/types';
 import EventCard from './EventCard';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useEffect, useState } from 'react';
 
 export const MOCK_EVENTS: Event[] = [
   {
@@ -258,7 +261,20 @@ export const MOCK_EVENTS: Event[] = [
   },
 ];
 
+const EVENTS_STORAGE_KEY = 'admin_events';
+
 export default function FeaturedEvents() {
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+    if (storedEvents) {
+      setEvents(JSON.parse(storedEvents));
+    } else {
+      setEvents(MOCK_EVENTS);
+    }
+  }, []);
+
   return (
     <section id="events" className="py-12 md:py-20">
       <div className="text-center mb-10">
@@ -266,7 +282,7 @@ export default function FeaturedEvents() {
         <p className="text-muted-foreground mt-2">Join thousands of innovators at our upcoming events.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {MOCK_EVENTS.map((event) => (
+        {events.map((event) => (
           <EventCard key={event.id} event={event} />
         ))}
       </div>
