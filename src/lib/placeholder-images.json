@@ -4,194 +4,196 @@
     {
       "id": "hero-background",
       "description": "Large audience at a tech conference",
-      "imageUrl": "https://picsum.photos/seed/conference/1920/1080",
+      "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1920&h=1080&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "conference crowd"
     },
     {
       "id": "event-1",
       "description": "AI conference with robotics",
-      "imageUrl": "https://picsum.photos/seed/robotics/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1527525443983-6e60c7535228?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "AI robotics"
     },
     {
       "id": "event-2",
       "description": "People collaborating at a hackathon",
-      "imageUrl": "https://picsum.photos/seed/coding/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "people coding"
     },
     {
       "id": "event-3",
       "description": "Designer sketching on a tablet",
-      "imageUrl": "https://picsum.photos/seed/design-sketch/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1581090123145-559648b2a19f?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "design sketch"
     },
     {
       "id": "event-4",
       "description": "Abstract blockchain network visualization",
-      "imageUrl": "https://picsum.photos/seed/blockchain/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1621596131468-f1c3d186c319?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "blockchain network"
     },
     {
       "id": "event-5",
       "description": "Complex data visualization on a screen",
-      "imageUrl": "https://picsum.photos/seed/dataviz/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "data visualization"
     },
     {
       "id": "event-6",
       "description": "Person pitching an idea to an audience",
-      "imageUrl": "https://picsum.photos/seed/pitch/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "startup pitch"
     },
     {
       "id": "event-7",
       "description": "Wind turbines in a field, representing green energy",
-      "imageUrl": "https://picsum.photos/seed/wind-turbine/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1508247926952-78b3c9b8ba02?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "green energy"
     },
     {
       "id": "event-8",
       "description": "Mobile app development on a laptop",
-      "imageUrl": "https://picsum.photos/seed/mobile-dev/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1555774698-0b77e0ab2169?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "mobile development"
     },
     {
       "id": "event-9",
       "description": "Server racks in a data center",
-      "imageUrl": "https://picsum.photos/seed/servers/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "cloud servers"
     },
     {
       "id": "event-10",
       "description": "Person using a mobile banking app",
-      "imageUrl": "https://picsum.photos/seed/fintech/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1601597111158-2f9541d4bbf4?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "financial technology"
     },
     {
       "id": "event-11",
       "description": "Doctor using a tablet with medical data",
-      "imageUrl": "https://picsum.photos/seed/healthtech/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "medical technology"
     },
     {
       "id": "event-12",
       "description": "Online shopping interface on a laptop",
-      "imageUrl": "https://picsum.photos/seed/ecommerce/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "online shopping"
     },
     {
       "id": "event-13",
       "description": "Person playing video games with a controller",
-      "imageUrl": "https://picsum.photos/seed/gaming/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1580327372025-3ab193a1523c?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "video games"
     },
     {
       "id": "event-14",
       "description": "Abstract representation of cyber security",
-      "imageUrl": "https://picsum.photos/seed/cybersecurity/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "cyber security"
     },
     {
       "id": "event-15",
       "description": "Futuristic electric car on a city street",
-      "imageUrl": "https://picsum.photos/seed/electric-car/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1617802319350-c2fbe04c5208?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "electric car"
     },
     {
       "id": "event-16",
       "description": "Student learning online with a laptop",
-      "imageUrl": "https://picsum.photos/seed/edtech/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "online learning"
     },
     {
       "id": "event-17",
       "description": "Rocket launching into space",
-      "imageUrl": "https://picsum.photos/seed/rocket/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1457364983758-515f4a6f9457?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "rocket launch"
     },
     {
       "id": "event-18",
       "description": "A sophisticated robotic arm in a factory setting",
-      "imageUrl": "https://picsum.photos/seed/robot-arm/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1567705689825-e215f973f135?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "robotic arm"
     },
     {
       "id": "event-19",
       "description": "Person wearing a VR headset and looking amazed",
-      "imageUrl": "https://picsum.photos/seed/vr/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1544415239-2a88d7459d8c?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "VR headset"
     },
     {
       "id": "event-20",
       "description": "Drone flying over a farm field",
-      "imageUrl": "https://picsum.photos/seed/agritech/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1572292728821-4435b23e7647?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "smart farm"
     },
     {
       "id": "event-21",
       "description": "Abstract visualization of quantum computing",
-      "imageUrl": "https://picsum.photos/seed/quantum/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1617854818583-09e7f077a157?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "quantum computer"
     },
     {
       "id": "event-22",
       "description": "Person recording a video for social media",
-      "imageUrl": "https://picsum.photos/seed/creator/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1556741533-31f13a0ce853?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "social media"
     },
     {
       "id": "event-23",
       "description": "A modern city skyline with digital overlays",
-      "imageUrl": "https://picsum.photos/seed/smart-city/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "smart city"
     },
     {
       "id": "sponsor-1",
       "description": "Sponsor logo 1",
-      "imageUrl": "https://picsum.photos/seed/s-innovate/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "minimalist logo"
     },
     {
       "id": "sponsor-2",
       "description": "Sponsor logo 2",
-      "imageUrl": "https://picsum.photos/seed/s-future/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "geometric logo"
     },
     {
       "id": "sponsor-3",
       "description": "Sponsor logo 3",
-      "imageUrl": "https://picsum.photos/seed/s-quantum/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "abstract logo"
     },
     {
       "id": "sponsor-4",
       "description": "Sponsor logo 4",
-      "imageUrl": "https://picsum.photos/seed/s-code/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616805-c1f932832563?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "tech company"
     },
     {
       "id": "sponsor-5",
       "description": "Sponsor logo 5",
-      "imageUrl": "https://picsum.photos/seed/s-data/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617213-6d222950b732?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "modern logo"
     },
     {
       "id": "sponsor-6",
       "description": "Sponsor logo 6",
-      "imageUrl": "https://picsum.photos/seed/s-nexus/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1612810806143-a172b8a0e8a0?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "circle logo"
     },
     {
       "id": "sponsor-7",
       "description": "Sponsor logo 7",
-      "imageUrl": "https://picsum.photos/seed/s-apex/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162618021-99679e88354c?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "triangle logo"
     },
     {
       "id": "sponsor-8",
       "description": "Sponsor logo 8",
-      "imageUrl": "https://picsum.photos/seed/s-stellar/150/50",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616834-3b7c8f9c1a1f?q=80&w=150&h=50&fit=contain&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "square logo"
     }
   ]
 }
+
+    
