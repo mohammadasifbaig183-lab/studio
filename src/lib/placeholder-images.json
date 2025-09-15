@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -53,6 +54,96 @@
       "description": "Placeholder for Mobile Developers Conference",
       "imageUrl": "https://picsum.photos/seed/e8/600/400",
       "imageHint": "mobile development"
+    },
+    {
+      "id": "event-9",
+      "description": "Placeholder for Cloud Native Summit",
+      "imageUrl": "https://picsum.photos/seed/e9/600/400",
+      "imageHint": "cloud servers"
+    },
+    {
+      "id": "event-10",
+      "description": "Placeholder for FinTech Revolution",
+      "imageUrl": "https://picsum.photos/seed/e10/600/400",
+      "imageHint": "financial technology"
+    },
+    {
+      "id": "event-11",
+      "description": "Placeholder for HealthTech Forward",
+      "imageUrl": "https://picsum.photos/seed/e11/600/400",
+      "imageHint": "medical technology"
+    },
+    {
+      "id": "event-12",
+      "description": "Placeholder for E-commerce Expo",
+      "imageUrl": "https://picsum.photos/seed/e12/600/400",
+      "imageHint": "online shopping"
+    },
+    {
+      "id": "event-13",
+      "description": "Placeholder for Gaming Universe",
+      "imageUrl": "https://picsum.photos/seed/e13/600/400",
+      "imageHint": "video games"
+    },
+    {
+      "id": "event-14",
+      "description": "Placeholder for Cybersecurity Conclave",
+      "imageUrl": "https://picsum.photos/seed/e14/600/400",
+      "imageHint": "cyber security"
+    },
+    {
+      "id": "event-15",
+      "description": "Placeholder for Future of Transportation",
+      "imageUrl": "https://picsum.photos/seed/e15/600/400",
+      "imageHint": "electric car"
+    },
+    {
+      "id": "event-16",
+      "description": "Placeholder for EdTech Summit 2025",
+      "imageUrl": "https://picsum.photos/seed/e16/600/400",
+      "imageHint": "online learning"
+    },
+    {
+      "id": "event-17",
+      "description": "Placeholder for Space Exploration Symposium",
+      "imageUrl": "https://picsum.photos/seed/e17/600/400",
+      "imageHint": "rocket launch"
+    },
+    {
+      "id": "event-18",
+      "description": "Placeholder for Robotics & Automation Fair",
+      "imageUrl": "https://picsum.photos/seed/e18/600/400",
+      "imageHint": "robotic arm"
+    },
+    {
+      "id": "event-19",
+      "description": "Placeholder for Virtual Reality World",
+      "imageUrl": "https://picsum.photos/seed/e19/600/400",
+      "imageHint": "VR headset"
+    },
+    {
+      "id": "event-20",
+      "description": "Placeholder for AgriTech Conference",
+      "imageUrl": "https://picsum.photos/seed/e20/600/400",
+      "imageHint": "smart farm"
+    },
+    {
+      "id": "event-21",
+      "description": "Placeholder for Quantum Computing Summit",
+      "imageUrl": "https://picsum.photos/seed/e21/600/400",
+      "imageHint": "quantum computer"
+    },
+    {
+      "id": "event-22",
+      "description": "Placeholder for The Creator Economy",
+      "imageUrl": "https://picsum.photos/seed/e22/600/400",
+      "imageHint": "social media"
+    },
+    {
+      "id": "event-23",
+      "description": "Placeholder for Smart Cities Expo",
+      "imageUrl": "https://picsum.photos/seed/e23/600/400",
+      "imageHint": "smart city"
     },
     {
       "id": "sponsor-1",

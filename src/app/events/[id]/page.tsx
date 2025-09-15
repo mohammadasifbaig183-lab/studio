@@ -1,20 +1,41 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Event } from '@/lib/types';
-import { Calendar, MapPin, Users, Ticket } from 'lucide-react';
+import { Calendar, MapPin, Users, Ticket, CheckCircle } from 'lucide-react';
 import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
+import { useToast } from '@/hooks/use-toast';
+import { auth } from '@/lib/firebase';
+import type { User as FirebaseUser } from 'firebase/auth';
 
 export default function EventDetailPage() {
   const params = useParams();
+  const router = useRouter();
+  const { toast } = useToast();
   const eventId = params.id as string;
 
+  const [user, setUser] = useState<FirebaseUser | null>(null);
+  const [isRegistered, setIsRegistered] = useState(false);
+  
   const event: Event | undefined = MOCK_EVENTS.find(e => e.id === eventId);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+      if (user && event) {
+        // Check local storage for registration status
+        const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
+        setIsRegistered(registrations[user.uid]?.includes(event.id));
+      }
+    });
+    return () => unsubscribe();
+  }, [event]);
 
   if (!event) {
     return (
@@ -24,6 +45,39 @@ export default function EventDetailPage() {
       </div>
     );
   }
+
+  const handleRegister = () => {
+    if (!user) {
+      toast({
+        title: 'Please sign in',
+        description: 'You need to be signed in to register for an event.',
+        variant: 'destructive',
+      });
+      router.push('/login');
+      return;
+    }
+
+    const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
+    if (!registrations[user.uid]) {
+      registrations[user.uid] = [];
+    }
+    
+    if (!registrations[user.uid].includes(event.id)) {
+      registrations[user.uid].push(event.id);
+      localStorage.setItem('registrations', JSON.stringify(registrations));
+      setIsRegistered(true);
+      toast({
+        title: 'Registration Successful!',
+        description: `You are now registered for ${event.title}.`,
+      });
+    } else {
+        toast({
+            title: 'Already Registered',
+            description: `You are already registered for ${event.title}.`,
+        });
+    }
+  };
+
 
   const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
 
@@ -76,9 +130,18 @@ export default function EventDetailPage() {
                 <Users className="h-5 w-5 text-muted-foreground" />
                 <span className="font-medium">1,234 attendees</span>
               </div>
-              <Button size="lg" className="w-full">
-                <Ticket className="mr-2 h-5 w-5" />
-                Register Now
+              <Button size="lg" className="w-full" onClick={handleRegister} disabled={isRegistered}>
+                {isRegistered ? (
+                    <>
+                        <CheckCircle className="mr-2 h-5 w-5" />
+                        Registered
+                    </>
+                ) : (
+                    <>
+                        <Ticket className="mr-2 h-5 w-5" />
+                        Register Now
+                    </>
+                )}
               </Button>
             </CardContent>
           </Card>
