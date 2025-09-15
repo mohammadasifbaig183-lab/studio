@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import type { Sponsor } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -38,3 +39,5 @@ export default function Sponsors() {
     </section>
   );
 }
+
+    
