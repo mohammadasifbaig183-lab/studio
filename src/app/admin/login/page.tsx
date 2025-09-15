@@ -56,10 +56,10 @@ export default function AdminLoginPage() {
       router.push('/admin');
     } catch (error: any) {
        // Gracefully handle if the admin account doesn't exist in Firebase Auth
-       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
          toast({
             title: 'Authentication Failed',
-            description: 'Please create an account for the admin email in your Firebase project.',
+            description: 'To use the prototype, please create an account for the admin email in your Firebase project.',
             variant: 'destructive',
          });
        } else {
