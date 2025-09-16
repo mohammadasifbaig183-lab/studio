@@ -53,6 +53,7 @@ export default function TicketPage() {
       if (event.imageUrl && (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http'))) {
         return event.imageUrl;
       }
+      // Fallback for events that might not have a proper image URL
       return 'https://picsum.photos/seed/placeholder/600/400';
   }
 
@@ -64,7 +65,7 @@ export default function TicketPage() {
     );
   }
 
-  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Math.random().toString(36).substring(2, 6)}`.toUpperCase();
+  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Date.now().toString(36)}`.toUpperCase();
 
   const qrCodeData = JSON.stringify({
       ticketId: ticketId,
