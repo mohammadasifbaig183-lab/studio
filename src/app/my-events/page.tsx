@@ -53,7 +53,7 @@ export default function MyEventsPage() {
   };
   
   const getEventImage = (event: Event) => {
-      if (event.imageUrl.startsWith('data:')) {
+      if (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http')) {
         return event.imageUrl;
       }
       const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
