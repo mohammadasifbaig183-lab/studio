@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import { Sparkles } from 'lucide-react';
 import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const EVENTS_STORAGE_KEY = 'admin_events';
 
@@ -54,7 +55,8 @@ export default function TicketPage() {
         return event.imageUrl;
       }
       // Fallback for events that might not have a proper image URL
-      return 'https://picsum.photos/seed/placeholder/600/400';
+      const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
+      return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
   }
 
   if (loading || !user || !event) {
