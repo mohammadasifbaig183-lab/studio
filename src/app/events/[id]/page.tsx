@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Event } from '@/lib/types';
 import { Calendar, MapPin, Users, Ticket, CheckCircle, CreditCard } from 'lucide-react';
 import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
@@ -74,11 +73,19 @@ export default function EventDetailPage() {
     if (event.price > 0) {
       // Paid event
       try {
+        const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+        const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+        const currentEvent = allEvents.find((e: Event) => e.id === eventId);
+        
+        if (!currentEvent) {
+          throw new Error('Event details not found for payment.');
+        }
+
         const session = await createCheckoutSession({
           priceId: `price_${event.id}`, // This assumes you have a price ID convention
-          eventName: event.title,
-          eventDescription: event.description,
-          eventImageUrl: event.imageUrl,
+          eventName: currentEvent.title,
+          eventDescription: currentEvent.description,
+          eventImageUrl: currentEvent.imageUrl,
           eventId: event.id,
           userId: user.uid,
         });
@@ -130,20 +137,18 @@ export default function EventDetailPage() {
   };
 
 
-  const eventImage = event.imageUrl.startsWith('data:') ? { imageUrl: event.imageUrl, imageHint: event.imageHint } : PlaceHolderImages.find(p => p.id === `event-${event.id}`);
-
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
         <div className="md:col-span-2">
           <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg mb-8">
-            {eventImage && (
+            {event.imageUrl && (
               <Image
-                src={eventImage.imageUrl}
+                src={event.imageUrl}
                 alt={event.title}
                 fill
                 className="object-cover"
-                data-ai-hint={eventImage.imageHint}
+                data-ai-hint={event.imageHint}
               />
             )}
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

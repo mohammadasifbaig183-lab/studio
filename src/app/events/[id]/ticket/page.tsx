@@ -10,7 +10,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import { Sparkles, MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const EVENTS_STORAGE_KEY = 'admin_events';
 
@@ -51,11 +50,11 @@ export default function TicketPage() {
   }, [eventId, router]);
 
   const getEventImage = (event: Event) => {
-      if (event.imageUrl.startsWith('data:')) {
+      if (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http')) {
         return event.imageUrl;
       }
-      const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
-      return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+      // Fallback for potentially broken image paths
+      return 'https://picsum.photos/seed/placeholder/600/400';
   }
 
   if (loading || !user || !event) {
@@ -66,7 +65,7 @@ export default function TicketPage() {
     );
   }
 
-  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Math.random().toString(36).substr(2, 4)}`.toUpperCase();
+  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Math.random().toString(36).substring(2, 6)}`.toUpperCase();
 
   const qrCodeData = JSON.stringify({
       ticketId: ticketId,
@@ -89,7 +88,6 @@ export default function TicketPage() {
         </CardHeader>
         <CardContent className="p-6 text-center">
             <div className="flex justify-center mb-6">
-                {/* In a real app, this would be a real QR code */}
                 <Image src={qrCodeUrl} alt="QR Code" width={128} height={128} />
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm text-left">
