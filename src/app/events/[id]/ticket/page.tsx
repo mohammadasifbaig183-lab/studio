@@ -8,7 +8,7 @@ import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
 import type { Event } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Sparkles, MapPin, Calendar } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -51,7 +51,7 @@ export default function TicketPage() {
   }, [eventId, router]);
 
   const getEventImage = (event: Event) => {
-      if (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http')) {
+      if (event.imageUrl && (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http'))) {
         return event.imageUrl;
       }
       const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);

@@ -28,8 +28,10 @@ export default function MyEventsPage() {
         setUser(user);
         const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
         const userRegistrations = registrations[user.uid] || [];
+        
         const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
         const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+        
         const userEvents = allEvents.filter((event: Event) => userRegistrations.includes(event.id));
         setRegisteredEvents(userEvents);
       } else {
@@ -53,7 +55,7 @@ export default function MyEventsPage() {
   };
   
   const getEventImage = (event: Event) => {
-      if (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http')) {
+      if (event.imageUrl && (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http'))) {
         return event.imageUrl;
       }
       const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
