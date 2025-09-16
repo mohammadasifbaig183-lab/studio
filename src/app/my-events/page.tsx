@@ -128,7 +128,7 @@ export default function MyEventsPage() {
                   <Button asChild className="w-full sm:w-auto">
                     <Link href={`/events/${event.id}/certificate`}>
                         <Award className="mr-2 h-4 w-4" />
-                        Get Certificate
+                        View Certificate
                     </Link>
                   </Button>
                 ) : (
