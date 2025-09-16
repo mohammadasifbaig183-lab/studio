@@ -41,7 +41,15 @@ export default function MyEventsPage() {
   }, [router]);
 
   const isEventCompleted = (eventDate: string) => {
-    return new Date(eventDate) < new Date();
+    // Gracefully handle invalid date strings
+    const date = new Date(eventDate);
+    if (isNaN(date.getTime())) {
+      return false;
+    }
+    const today = new Date();
+    // Set time to 00:00:00 to compare dates only
+    today.setHours(0, 0, 0, 0); 
+    return date < today;
   };
   
   const getEventImage = (event: Event) => {
