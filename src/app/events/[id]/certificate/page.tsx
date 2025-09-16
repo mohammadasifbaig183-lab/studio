@@ -10,6 +10,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Sparkles, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const EVENTS_STORAGE_KEY = 'admin_events';
+
 export default function CertificatePage() {
   const params = useParams();
   const router = useRouter();
@@ -28,7 +30,10 @@ export default function CertificatePage() {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        const currentEvent = MOCK_EVENTS.find(e => e.id === eventId);
+        const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+        const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+        const currentEvent = allEvents.find((e: Event) => e.id === eventId);
+
         if (currentEvent) {
           const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
           const userRegistrations = registrations[currentUser.uid] || [];

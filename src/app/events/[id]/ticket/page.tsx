@@ -12,6 +12,8 @@ import { Sparkles, MapPin, Calendar, QrCode } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
+const EVENTS_STORAGE_KEY = 'admin_events';
+
 export default function TicketPage() {
   const params = useParams();
   const router = useRouter();
@@ -25,7 +27,10 @@ export default function TicketPage() {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        const currentEvent = MOCK_EVENTS.find(e => e.id === eventId);
+        const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
+        const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+        const currentEvent = allEvents.find((e: Event) => e.id === eventId);
+        
         if (currentEvent) {
           const registrations = JSON.parse(localStorage.getItem('registrations') || '{}');
           const userRegistrations = registrations[currentUser.uid] || [];
@@ -45,8 +50,11 @@ export default function TicketPage() {
     return () => unsubscribe();
   }, [eventId, router]);
 
-  const getEventImage = (eventId: string) => {
-      const eventImage = PlaceHolderImages.find(p => p.id === `event-${eventId}`);
+  const getEventImage = (event: Event) => {
+      if (event.imageUrl.startsWith('data:')) {
+        return event.imageUrl;
+      }
+      const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
       return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
   }
 
@@ -58,12 +66,12 @@ export default function TicketPage() {
     );
   }
 
-  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Date.now().toString().slice(-4)}`.toUpperCase();
+  const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Math.random().toString(36).substr(2, 4)}`.toUpperCase();
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 flex justify-center items-center">
       <Card className="w-full max-w-md shadow-2xl relative overflow-hidden bg-card">
-          <Image src={getEventImage(event.id)} alt={event.title} width={600} height={400} className="w-full h-40 object-cover"/>
+          <Image src={getEventImage(event)} alt={event.title} width={600} height={400} className="w-full h-40 object-cover"/>
           <div className="absolute top-0 left-0 w-full h-40 bg-black/50" />
         <CardHeader className="text-center relative -mt-16 z-10">
             <div className="bg-background/80 backdrop-blur-sm p-4 rounded-lg inline-block">
