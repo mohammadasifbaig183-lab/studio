@@ -8,7 +8,7 @@ import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
 import type { Event } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Sparkles, MapPin, Calendar, QrCode } from 'lucide-react';
+import { Sparkles, MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -68,6 +68,14 @@ export default function TicketPage() {
 
   const ticketId = `${user.uid.slice(0, 4)}-${event.id}-${Math.random().toString(36).substr(2, 4)}`.toUpperCase();
 
+  const qrCodeData = JSON.stringify({
+      ticketId: ticketId,
+      attendee: user.displayName || 'Valued Guest',
+      event: event.title,
+  });
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrCodeData)}&size=128x128&bgcolor=0-0-0-0&color=fff`;
+
+
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 flex justify-center items-center">
       <Card className="w-full max-w-md shadow-2xl relative overflow-hidden bg-card">
@@ -82,7 +90,7 @@ export default function TicketPage() {
         <CardContent className="p-6 text-center">
             <div className="flex justify-center mb-6">
                 {/* In a real app, this would be a real QR code */}
-                <QrCode className="h-32 w-32"/>
+                <Image src={qrCodeUrl} alt="QR Code" width={128} height={128} />
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm text-left">
                 <div>
