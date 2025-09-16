@@ -62,9 +62,8 @@ export default function CertificatePage() {
     );
   }
   
-  // Issue the certificate the day after the event ends
-  const eventDate = new Date(event.date);
-  const issueDate = new Date(eventDate.setDate(eventDate.getDate() + 1));
+  // Use the current date as the issue date
+  const issueDate = new Date();
 
   return (
     <div className="bg-muted/40 py-12 px-4 print:bg-white">
