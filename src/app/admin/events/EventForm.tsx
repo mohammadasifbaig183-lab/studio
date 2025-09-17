@@ -30,7 +30,6 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState('');
   const [price, setPrice] = useState(0);
-  const [imageUrl, setImageUrl] = useState('');
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   useEffect(() => {
@@ -41,7 +40,6 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       setDescription(event.description);
       setTags(event.tags.join(', '));
       setPrice(event.price);
-      setImageUrl(event.imageUrl);
       setImagePreview(event.imageUrl);
     } else {
       // Reset form when adding a new event
@@ -51,7 +49,6 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       setDescription('');
       setTags('');
       setPrice(0);
-      setImageUrl('');
       setImagePreview(null);
     }
   }, [event, isOpen]);
@@ -63,13 +60,14 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       reader.onloadend = () => {
         const result = reader.result as string;
         setImagePreview(result);
-        setImageUrl(result);
       };
       reader.readAsDataURL(file);
     }
   };
 
   const handleSubmit = () => {
+    // We will no longer save the base64 image data to localStorage.
+    // New events will use a placeholder. The preview is for UI only.
     const eventData = {
       title,
       date,
@@ -77,7 +75,7 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
       description,
       tags: tags.split(',').map(tag => tag.trim()),
       price: Number(price),
-      imageUrl: imageUrl || `https://picsum.photos/seed/e${Math.random()}/600/400`,
+      imageUrl: event?.imageUrl || `https://picsum.photos/seed/e${Math.random()}/600/400`,
     };
     onSave(eventData);
   };
@@ -119,6 +117,7 @@ export default function EventForm({ isOpen, onOpenChange, onSave, event }: Event
           <div className="grid gap-2">
              <Label htmlFor="image">Event Image</Label>
             <Input id="image" type="file" accept="image/*" onChange={handleImageChange} />
+             <p className="text-xs text-muted-foreground">Image is for preview only and will not be saved for new events to prevent storage issues.</p>
           </div>
           {imagePreview && (
             <div className="flex justify-center">
