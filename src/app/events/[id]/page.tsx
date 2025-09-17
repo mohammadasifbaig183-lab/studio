@@ -32,8 +32,14 @@ export default function EventDetailPage() {
 
   useEffect(() => {
     const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
-    const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
-    const currentEvent = allEvents.find((e: Event) => e.id === eventId);
+    let allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+    let currentEvent = allEvents.find((e: Event) => e.id === eventId);
+    
+    // If event not found in localStorage, check MOCK_EVENTS
+    if (!currentEvent) {
+        currentEvent = MOCK_EVENTS.find((e: Event) => e.id === eventId);
+    }
+    
     setEvent(currentEvent);
   }, [eventId]);
 
