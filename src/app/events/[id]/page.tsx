@@ -32,10 +32,11 @@ export default function EventDetailPage() {
 
   useEffect(() => {
     const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
-    let allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+    const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
     let currentEvent = allEvents.find((e: Event) => e.id === eventId);
     
-    // If event not found in localStorage, check MOCK_EVENTS
+    // If event not found in localStorage-derived events, check MOCK_EVENTS as a fallback.
+    // This handles cases where localStorage might be cleared or an old link is accessed.
     if (!currentEvent) {
         currentEvent = MOCK_EVENTS.find((e: Event) => e.id === eventId);
     }
@@ -56,11 +57,17 @@ export default function EventDetailPage() {
   }, [event]);
 
   const getEventImage = (event: Event) => {
-      if (event.imageUrl && (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http'))) {
+      // Use the image if it's a direct URL or a base64 string
+      if (event.imageUrl && (event.imageUrl.startsWith('http') || event.imageUrl.startsWith('data:'))) {
         return event.imageUrl;
       }
+      // Otherwise, try to find a placeholder from the JSON file
       const placeholder = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
-      return placeholder?.imageUrl || event.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+      if (placeholder) {
+        return placeholder.imageUrl;
+      }
+      // Fallback to the original imageUrl (which might be a picsum link) or a generic placeholder
+      return event.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
   }
 
   if (!event) {
