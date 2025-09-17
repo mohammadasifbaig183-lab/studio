@@ -10,7 +10,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import { Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const EVENTS_STORAGE_KEY = 'admin_events';
 
@@ -55,8 +54,7 @@ export default function TicketPage() {
         return event.imageUrl;
       }
       // Fallback for events that might not have a proper image URL
-      const eventImage = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
-      return eventImage?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+      return MOCK_EVENTS.find(e => e.id === event.id)?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
   }
 
   if (loading || !user || !event) {
@@ -74,7 +72,7 @@ export default function TicketPage() {
       attendee: user.displayName || 'Valued Guest',
       event: event.title,
   });
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrCodeData)}&size=128x128&bgcolor=0-0-0-0&color=fff`;
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrCodeData)}&size=128x128&bgcolor=0-0-0-0&color=000`;
 
 
   return (
