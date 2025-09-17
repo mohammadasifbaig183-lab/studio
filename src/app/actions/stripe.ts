@@ -1,6 +1,7 @@
 'use server';
 
 import { MOCK_EVENTS } from '@/components/landing/FeaturedEvents';
+import type { Event } from '@/lib/types';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
@@ -12,17 +13,14 @@ type CreateCheckoutSessionParams = {
     eventImageUrl: string,
     eventId: string,
     userId: string,
+    priceInCents: number,
 }
 
 export async function createCheckoutSession(params: CreateCheckoutSessionParams) {
-    const { priceId, eventName, eventDescription, eventImageUrl, eventId, userId } = params;
+    const { priceId, eventName, eventDescription, eventImageUrl, eventId, userId, priceInCents } = params;
 
-    const storedEvents = localStorage.getItem('admin_events');
-    const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
-    const event = allEvents.find((e: any) => e.id === eventId);
-    
-    if (!event || event.price === 0) {
-        throw new Error('Event not found or is free.');
+    if (priceInCents === 0) {
+        throw new Error('Event is free.');
     }
 
     // In a real app, you would retrieve or create a Stripe Price ID.
@@ -37,7 +35,7 @@ export async function createCheckoutSession(params: CreateCheckoutSessionParams)
 
         const price = await stripe.prices.create({
             product: product.id,
-            unit_amount: event.price * 100, // Price in cents
+            unit_amount: priceInCents, // Price in cents
             currency: 'usd',
         });
 

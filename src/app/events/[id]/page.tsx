@@ -82,21 +82,14 @@ export default function EventDetailPage() {
     if (event.price > 0) {
       // Paid event
       try {
-        const storedEvents = localStorage.getItem(EVENTS_STORAGE_KEY);
-        const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
-        const currentEvent = allEvents.find((e: Event) => e.id === eventId);
-        
-        if (!currentEvent) {
-          throw new Error('Event details not found for payment.');
-        }
-
         const session = await createCheckoutSession({
           priceId: `price_${event.id}`, // This assumes you have a price ID convention
-          eventName: currentEvent.title,
-          eventDescription: currentEvent.description,
-          eventImageUrl: getEventImage(currentEvent),
+          eventName: event.title,
+          eventDescription: event.description,
+          eventImageUrl: getEventImage(event),
           eventId: event.id,
           userId: user.uid,
+          priceInCents: event.price * 100,
         });
 
         if (session.sessionId) {
