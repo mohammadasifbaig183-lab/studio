@@ -11,8 +11,7 @@ type EventCardProps = {
 
 export default function EventCard({ event }: EventCardProps) {
   return (
-    <Link href={`/events/${event.id}`} passHref legacyBehavior>
-      <a className="block h-full">
+    <Link href={`/events/${event.id}`} className="block h-full">
         <Card className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
             <CardHeader className="p-0 relative">
               <Image
@@ -51,7 +50,6 @@ export default function EventCard({ event }: EventCardProps) {
             </div>
           </CardFooter>
         </Card>
-      </a>
     </Link>
   );
 }
