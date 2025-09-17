@@ -7,7 +7,7 @@ export default function Footer() {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    // Simulate fetching an initial count
+    // Generate initial count only on the client-side to avoid hydration mismatch
     const initialCount = Math.floor(Math.random() * 1000) + 500;
     setVisitorCount(initialCount);
 
@@ -37,7 +37,11 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-end gap-2">
              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Users className="h-4 w-4" />
-                <span>{visitorCount.toLocaleString()} visitors online</span>
+                {visitorCount > 0 ? (
+                  <span>{visitorCount.toLocaleString()} visitors online</span>
+                ) : (
+                  <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                )}
             </div>
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} SynergySphere. All rights reserved.
