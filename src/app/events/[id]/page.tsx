@@ -14,6 +14,7 @@ import { auth } from '@/lib/firebase';
 import type { User as FirebaseUser } from 'firebase/auth';
 import { loadStripe } from '@stripe/stripe-js';
 import { createCheckoutSession } from '@/app/actions/stripe';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
 const EVENTS_STORAGE_KEY = 'admin_events';
@@ -47,6 +48,14 @@ export default function EventDetailPage() {
     });
     return () => unsubscribe();
   }, [event]);
+
+  const getEventImage = (event: Event) => {
+      if (event.imageUrl && (event.imageUrl.startsWith('data:') || event.imageUrl.startsWith('http'))) {
+        return event.imageUrl;
+      }
+      const placeholder = PlaceHolderImages.find(p => p.id === `event-${event.id}`);
+      return placeholder?.imageUrl || event.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+  }
 
   if (!event) {
     return (
@@ -85,7 +94,7 @@ export default function EventDetailPage() {
           priceId: `price_${event.id}`, // This assumes you have a price ID convention
           eventName: currentEvent.title,
           eventDescription: currentEvent.description,
-          eventImageUrl: currentEvent.imageUrl,
+          eventImageUrl: getEventImage(currentEvent),
           eventId: event.id,
           userId: user.uid,
         });
@@ -144,7 +153,7 @@ export default function EventDetailPage() {
           <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg mb-8">
             {event.imageUrl && (
               <Image
-                src={event.imageUrl}
+                src={getEventImage(event)}
                 alt={event.title}
                 fill
                 className="object-cover"

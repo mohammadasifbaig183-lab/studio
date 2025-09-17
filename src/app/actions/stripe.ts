@@ -17,7 +17,10 @@ type CreateCheckoutSessionParams = {
 export async function createCheckoutSession(params: CreateCheckoutSessionParams) {
     const { priceId, eventName, eventDescription, eventImageUrl, eventId, userId } = params;
 
-    const event = MOCK_EVENTS.find(e => e.id === eventId);
+    const storedEvents = localStorage.getItem('admin_events');
+    const allEvents = storedEvents ? JSON.parse(storedEvents) : MOCK_EVENTS;
+    const event = allEvents.find((e: any) => e.id === eventId);
+    
     if (!event || event.price === 0) {
         throw new Error('Event not found or is free.');
     }
